@@ -14,14 +14,20 @@ function App() {
 	const user = null;
 
 	useEffect(() => {
-		onAuthStateChanged(auth, (user) => {
-			if (user) {
-				// Logged in
-				console.log(user);
-			} else {
-				// User is signed out
+		const unsubscribe = onAuthStateChanged(
+			auth,
+			(user) => {
+				if (user) {
+					// Logged in
+
+					console.log(user);
+				} else {
+					// User is signed out
+				}
 			}
-		});
+		);
+
+		return unsubscribe;
 	}, []);
 
 	return (
