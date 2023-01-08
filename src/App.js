@@ -40,7 +40,7 @@ function App() {
 					// console.log(user);
 				} else {
 					// User is signed out
-					dispatch(logout);
+					dispatch(logout());
 				}
 			}
 		);
@@ -58,8 +58,8 @@ function App() {
 						<Route
 							path="/"
 							element={<HomeScreen />}
-							/>
-							<Route
+						/>
+						<Route
 							path="/profile"
 							element={<Profile />}
 						/>
